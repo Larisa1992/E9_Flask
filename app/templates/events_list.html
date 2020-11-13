@@ -1,0 +1,35 @@
+<html>
+   <head>
+       <title>List Events</title>
+   </head>
+   <body>
+    <h1>Events</h1>
+
+    <form method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+    </form>
+
+    <table border="1">
+		<tr>
+			<th> author </th>
+            <th>theme</th>
+            <th>from_date</th>
+            <th>to_date</th>
+            <th>actions</th>
+		</tr>
+		{% for res in object_list %}	
+		<tr>
+			<td>{{ res.author }}</td>
+            <td>{{ res.theme }}</td>
+            <td>{{ res.from_date }}</td>
+            <td>{{ res.to_date }}</td>
+            <td>
+                {% if res.author == current_user.email %}
+                <a href="/events/{{ res._id }}"><button>Детальнее</button></a>
+                {% endif %}
+            </td>
+		</tr>
+		{% endfor %}
+	</table>
+   </body>
+</html>

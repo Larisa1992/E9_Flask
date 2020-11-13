@@ -1,0 +1,32 @@
+<html>
+   <head>
+       <title>List Events</title>
+   </head>
+   <body>
+    <h1>Edit Events</h1>
+    <h4> Your email {{ current_user.email }} !</h4>
+    <table border="1">
+		<tr>
+			<th>from_date</th>
+            <th>to_date</th>
+            <th>theme</th>
+            <th>description</th>
+		</tr>
+		{% for res in object_list %}	
+		<tr>
+			<td>{{ res.from_date }}</td>
+            <td>{{ res.to_date }}</td>
+            <td>{{ res.theme }}</td>
+            <td>{{ description }}</td>
+		</tr>
+		{% endfor %}
+    </table>
+    
+    <form action="/" method='post'>
+
+    </form>
+
+
+
+   </body>
+</html>

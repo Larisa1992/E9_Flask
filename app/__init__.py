@@ -40,4 +40,4 @@ login_manager.init_app(app)
 bcrypt = Bcrypt(app)
 
 from app import routes, models, forms
-# db.create_all()
+db.create_all()
